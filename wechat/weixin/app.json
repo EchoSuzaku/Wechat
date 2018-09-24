@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/iamcarfman/iamcarfman",
+    "pages/becarfman/becarfman",
+    "pages/carfmanSchedule/carfmanSchedule",
+    "pages/ihavecarfman/ihavecarfman",
+    "pages/booking/booking"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

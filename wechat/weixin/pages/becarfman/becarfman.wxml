@@ -1,0 +1,64 @@
+<view class="bg">
+  <view class="t">可预约详情</view>
+  <view class="r">设置周期</view>
+  <view class="sr">
+    <radio-group bindchange="changeforever">
+      <label>
+        <radio value="true"  />永久有效
+      </label>
+      <label>
+        <radio value="false" />选择有效日期
+      </label>
+    </radio-group>
+    <view class="srf" wx:if="{{!forever}}">
+      <picker mode="date" value="{{targetday}}" start="{{today}}" fields="day" end="{{endday}}" bindchange="settargetday">
+        <view class="classname">{{today}} 至 {{targetday}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="r">设置星期</view>
+  <view class="sr">
+    <checkbox-group bindchange="setweek">
+      <label>
+        <checkbox value="Monday" />周一
+      </label>
+      <label>
+        <checkbox value="Tuesday"  />周二
+      </label>
+      <label>
+        <checkbox value="Wednesday"  />周三
+      </label>
+      <label>
+        <checkbox value="Thursday" />周四
+      </label>
+      <label>
+        <checkbox value="Friday"  />周五
+      </label>
+      <label>
+        <checkbox value="Saturday"  />周六
+      </label>
+      <label>
+        <checkbox value="Sunday" />周日
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="r">设定时间</view>
+  <view class="sr1">
+    <picker mode="time" value="{{starttime}}" start="00:00" end="24:00" bindchange="setStartTime">
+      <view class="srf">{{starttime}}</view>
+    </picker>
+    <view class="sr2">到</view>
+    <picker mode="time" value="{{endtime}}" start="00:00" end="24:00" bindchange="setEndTime">
+      <view class="srf">{{endtime}}</view>
+    </picker>
+  </view>
+
+  <view class="r">
+    <view class="submit" bindtap="submit">设置</view>
+  </view>
+
+  <view class="r">
+    <view class="close" bindtap="close">返回</view>
+  </view>
+
+</view>

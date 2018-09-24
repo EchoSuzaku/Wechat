@@ -1,0 +1,12 @@
+<view class="bg">
+  <view class="lb01">选择专长</view>
+  <view class="majors">
+    <view wx:for="{{Majors}}" wx:for-item="item" wx:key="*this" wx:for-index="idx" class="major" data-id="{{item._id}}" bindtap="getMajor">
+      {{item.name}}
+    </view>
+  </view>
+  <view class="addnew">
+    <input type="text" placeholder="以上都不是，请添加..." class="other" bindinput="addmajor" />
+    <view class="addbutton" bindtap="comformadd">添加</view>
+  </view>
+</view>

@@ -1,0 +1,76 @@
+.bg{
+
+}
+
+.t{
+  font-size: 42rpx;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  width: 100%;
+  text-align: center;
+}
+.s{
+  white-space: nowrap;
+  width: 100%;
+}
+
+.s view{
+  display: inline-block;
+  border: 1px #000 solid;
+  border-radius: 12rpx;
+  padding: 12rpx;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  font-size: 32rpx;
+}
+
+.sy{
+  width: 100%;
+  height: 512px;
+}
+
+.sp{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sa{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 60rpx;
+}
+.sp1{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20rpx;
+  width: 80%;
+}
+
+.sp2{
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #AAA;
+  width: 80%;
+}
+
+.sn{
+  font-size: 48rpx;
+  align-self: flex-start;
+}
+
+.carfmans{
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.carfman{
+  margin-bottom: 10rpx;
+  border-bottom: 1rpx #AAA solid;
+  padding: 10rpx;
+}

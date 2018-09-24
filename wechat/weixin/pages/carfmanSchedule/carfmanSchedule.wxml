@@ -1,0 +1,18 @@
+<view class="b">
+  <view bindtap="settting" class='toolsbar'>
+    设置计划
+  </view>
+  <view bindtap='managerbookings' class='toolsbar'>
+    管理预约
+  </view>
+    <view bindtap='myschedule' class='toolsbar'>
+    我的日程
+  </view>
+</view>
+<scroll-view class="t" scroll-y>
+<block wx:for="{{mySchedule}}" wx:for-item="item" wx:key="*ms" wx:for-index="idx">
+  <view class='s_i'>
+    {{item.guest}}: booking time:{{item.date.day}} [{{item.time}} ~ {{item.time + item.range}}]
+  </view>
+</block>
+</scroll-view>

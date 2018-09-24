@@ -1,0 +1,91 @@
+/* pages/becarfman/becarfman.wxss */
+.bg{
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  width:100%;
+  height: 593px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.t{
+  display: flex;
+  font-size: 42rpx;
+  margin-top: 20rpx;
+}
+
+.r{
+  display: flex;
+  font-size: 32rpx;
+  margin-top: 40rpx;
+}
+
+.sr{
+  display: flex;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.sr1{
+  display: flex;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sr2{
+  display: flex;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+
+.srf{
+  display: flex;
+  font-size: 28rpx;
+  border-radius: 12rpx;
+  padding: 12rpx;
+  background-color: #AAAAAA;
+  margin-top: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit{
+  display: flex;
+  font-size: 32rpx;
+  border-radius: 12rpx;
+  padding: 12rpx;
+  background-color: #09BB07;
+  color: #FFF;
+}
+
+.close{
+  display: flex;
+  font-size: 32rpx;
+  border-radius: 12rpx;
+  padding: 12rpx;
+  background-color: #AAA;
+  color: #FFF;
+}
+
+
+checkbox{
+  margin-bottom: 10rpx;
+}

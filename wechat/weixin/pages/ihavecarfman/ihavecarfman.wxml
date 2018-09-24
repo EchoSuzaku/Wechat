@@ -1,0 +1,34 @@
+<view class="bg">
+  <view class="t">设置您的匠人</view>
+  <view class="majors">
+    <scroll-view scroll-x class="s">
+      <view wx:for="{{Majors}}" wx:for-item="item" wx:key="*Mthis" wx:for-index="idx" class="major" data-id="{{item._id}}" bindtap="getMajor">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="carfmans">
+    <scroll-view scroll-y class="sy">
+      <view wx:for="{{carfmans}}" wx:for-item="item" wx:key="*Cthis" wx:for-index="idx" class="carfman" data-id="{{item._id}}" bindtap="getCarfman">
+        <view class="sp">
+          <image src="{{item.avatarUrl}}" class="sa">头像</image>
+          <view class="sp1">
+            <view class="sn">{{item.nickName}}</view>
+            <view class="sp2">
+              <view class="sg" wx:if="{{item.gender == 2}}">女</view>
+              <view class="sg" wx:if="{{item.gender == 1}}">男</view>
+              <view class="sg" wx:if="{{item.gender == 0}}">未知</view>
+              <view class="sc" wx:if="{{item.city != ''}}">{{item.city}}</view>
+              <view class="sc" wx:if="{{item.city == ''}}">未知</view>
+              <view class="sp" wx:if="{{item.province != ''}}">{{item.province}}</view>
+              <view class="sp" wx:if="{{item.province == ''}}">未知</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+  <view>
+  </view>
+</view>
