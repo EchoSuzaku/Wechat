@@ -66,7 +66,7 @@ Page({
       }
     })
   },
-  ihave: function () {//我想学习
+  ihave: function () {//我想学习test
     var that = this
     wx.request({
       url: 'https://uncleek.shoppingzone.com.cn/firstCarfman',
