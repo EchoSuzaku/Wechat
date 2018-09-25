@@ -66,7 +66,7 @@ Page({
       }
     })
   },
-  ihave: function () {//我想学习test
+  ihave: function () {//我想学习，我想学课日期调整存在问题，socket会因为意外情况中断连接。
     var that = this
     wx.request({
       url: 'https://uncleek.shoppingzone.com.cn/firstCarfman',
