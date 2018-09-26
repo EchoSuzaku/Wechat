@@ -1,0 +1,75 @@
+<view class="all">
+  <view class="l">
+    <scroll-view scroll-y class="sl">
+      <view wx:for="{{carfmans}}" wx:for-item="item" wx:key="*ck" wx:for-index="idx" class="carfman">
+        <view class="c" data-id="{{idx}}" bindtap="setbooking" wx:if="{{carfmanIdx != idx}}">
+          <image src="{{item.info.avatarUrl}}" class="ca"></image>
+          <view class="cn">{{item.name}}</view>
+        </view>
+        <view class="c" data-id="{{idx}}" wx:if="{{carfmanIdx == idx}}">
+          <image src="{{item.info.avatarUrl}}" class="ca"></image>
+          <view class="gp">{{item.name}}</view>
+        </view>
+      </view>
+      <view class="c">
+        <view class="cn" bindtap="toMC">管理匠人</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="m">
+    <view>
+      <view class="td">{{today.cday}}</view>
+      <view class='tdc'>{{roomcount}}</view>
+      <view class='tdt' wx:if="{{resText}}">{{resText}}</view>
+    </view>
+    <view wx:if="{{!ctrl_bookingtime}}">
+      <view class="rp">
+        <block wx:for="{{bookingResoult}}" wx:for-item="item" wx:key="*tk" wx:for-index="idx">
+          <view wx:if="{{bookingResoult[idx].guest != 'no'}}" class="resvered" data-name="{{bookingResoult[idx].guest}}" data-id="{{idx}}">
+            <text class="rt">{{bookingResoult[idx].time}}开始[{{bookingResoult[idx].range}}小时]</text>
+            <text class="rn">{{bookingResoult[idx].guest}}</text>
+          </view>
+          <view wx:if="{{bookingResoult[idx].guest == 'no'}}" class="noresver" data-name="{{bookingResoult[idx].guest}}" data-id="{{idx}}" bindtap='reserve' data-starttime='{{bookingResoult[idx].time}}' data-rangetime='{{bookingResoult[idx].range}}'>
+            <text class="rt">{{bookingResoult[idx].time}}开始[{{bookingResoult[idx].range}}小时]</text>
+            <text class="rn">可被预约</text>
+            <text class="hrp" wx:if="{{bookingResoult[idx].haveC > 0}}">some one booking now</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='rp bookingtime' wx:if="{{ctrl_bookingtime}}">
+      <view class='bookingtext'>请选择你想预约的开始时间和结束时间</view>
+      <view wx:if="{{bookingtp.s.length>=5}}" class="rp bookingtime">
+        <slider min="0" max="{{bookingtp.s.length-1}}" step="1" class="bookingslider" bindchange='bookingtps'/>
+        <view class='bookingst_s' wx:if="{{bookingcheck.status > 0}}">{{bookingtp.s[bookingtp_idx].c}}</view>
+      </view>
+      <block wx:for="{{bookingtp.s}}" wx:for-item="item" wx:key="*tpk" wx:for-index="idx" wx:if="{{bookingtp.s.length<5}}">
+        <view class='bookingst' bindtap='bookingstep2' data-idx='{{idx}}' wx:if="{{bookingcheck.s.d != item.d}}">{{item.c}}</view>
+         <view class='bookingst_s' wx:if="{{bookingcheck.s.d == item.d}}">{{item.c}}</view>
+      </block>
+      <image src='../../imgs/emw_line_01.png' class='imgline'></image>
+      <block wx:for="{{bookingrp}}" wx:for-item="item" wx:key="*rpk" wx:for-index="idx" wx:if="{{bookingtp.s.length<5}}">
+        <view class='bookingst' data-idx='{{idx}}' wx:if="{{bookingcheck.e.d != item.d}}" bindtap='bookingstep3'>{{item.c}}</view>
+        <view class='bookingst_s' data-idx='{{idx}}' wx:if="{{bookingcheck.e.d == item.d}}">{{item.c}}</view>
+      </block>
+      <view wx:if="{{bookingtp.s.length>=5}}" class="rp bookingtime">
+        <slider min="0" max="{{bookingrp.length-1}}" step="1" class="bookingslider" bindchange='bookingrps' />
+        <view class='bookingst_s' wx:if="{{bookingcheck.status > 1}}">{{bookingrp[bookingrp_idx].c}}</view>
+      </view>
+      <view class='bookingst_tools'>
+        <view bindtap='esc_bookingtime' class="ebookingst">取消</view>
+        <view bindtap='com_bookingtime' class="cbookingst" wx:if="{{bookingcheck.status == 2}}" bindtap='bookingsubmit'>预定</view>
+        <view class="cbookingst_f" wx:if="{{bookingcheck.status<2}}">预约</view>
+      </view>
+    </view>
+  </view>
+  <view class="r" wx:if="{{!ctrl_bookingtime}}">
+    <picker-view class="p" indicator-class="ic" bindchange="setDay" value="{{[dayIdx]}}">
+      <picker-view-column>
+        <view class="pc" wx:for="{{calendar}}" wx:for-item="item" wx:key="*dk" wx:for-index="idx" data-id="{{item.day}}">
+          {{item.week1}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
